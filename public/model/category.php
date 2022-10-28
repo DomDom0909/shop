@@ -7,12 +7,12 @@ use ReallySimpleJWT\Token;
 /**
      * @OA\Post(
      *     path="/authentification",
-     *     summary="Used to authenticate and obtain an access token that will be stored in the cookies.",
+     *     summary="authenticate an access token that is stored in the cookies.",
      *     tags={"General"},
      *     requestBody=@OA\RequestBody(
      *         request="/Authenticate",
      *         required=true,
-     *         description="The credentials are passed to the server via the request body.",
+     *         description="The server receives the login information through the request text.",
      *         @OA\MediaType(
      *             mediaType="application/json",
      *             @OA\Schema(
