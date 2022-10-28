@@ -1,4 +1,33 @@
 <?php
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Factory\AppFactory;
+use ReallySimpleJWT\Token;
+
+/**
+     * @OA\Post(
+     *     path="/authentification",
+     *     summary="Used to authenticate and obtain an access token that will be stored in the cookies.",
+     *     tags={"General"},
+     *     requestBody=@OA\RequestBody(
+     *         request="/Authenticate",
+     *         required=true,
+     *         description="The credentials are passed to the server via the request body.",
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 @OA\Property(property="username", type="string", example="bannert"),
+     *                 @OA\Property(property="password", type="string", example="whynot123")
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(response="200", description="Successfully authenticated")),
+     *     @OA\Response(response="401", description="Invalid credentials")),
+     *     @OA\Response(response="500", description="Internal server error"))
+     * )
+	 */
+
+
 // Connetct to database.
 require "model/database.php";
 

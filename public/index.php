@@ -13,6 +13,10 @@
 
 	$app = AppFactory::create();
 
+	/** 
+	 * @OA\Info(title="shop", version="1") 
+	 */
+
 	function error($message, $code) {
 		//error = json object.
 		$error = array("message" => $message);
@@ -25,7 +29,7 @@
 		die();
 	}
 
-	require "controller/routes.php";
+	require "controller/category.php";
 	
 	$app->run();
 ?>
